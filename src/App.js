@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Chatbot from 'react-chatbot-kit';
+import config from './chatbot/config';
+import 'react-chatbot-kit/build/main.css';
+import ActionProvider from './chatbot/ActionProvider';
+import MessageParser from './chatbot/MessageParser';
+import "./App.css";
 
 function App() {
+  const [showChatbot, setShowChatbot] = useState(false);
+  const [key, setKey] = useState(0);
+  const handleToggleChatbot = () => {
+    setShowChatbot(!showChatbot);
+  };
+
+  const closeChat = () => {
+    setShowChatbot(false);
+  };
+  const handleResetChat = () => {
+    setKey(prevKey => prevKey + 1); 
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button 
+        onClick={handleToggleChatbot} 
+       
+        className='hello'
+      >
+        {showChatbot ? 'X' : '💬'}
+      </button>
+      
+      {showChatbot && (
+        <div style={{ display: 'inline-block', backgroundColor: "#f2f6ff", borderRadius: "10px" }}>
+          <Chatbot 
+           key={key}
+            config={config(closeChat, handleResetChat)} 
+            actionProvider={ActionProvider} 
+            messageParser={MessageParser} 
+          />
+        </div>
+      )}
     </div>
   );
 }

@@ -1,0 +1,72 @@
+.flashcard-container {
+    padding: 15px;
+    border-radius: 3px;
+    background-color:#2898ec ;
+  color: white;
+  margin:4px;
+  }
+  
+  .flashcard-button {
+    background: transparent;
+    padding: 8px;
+    border-radius: 3px;
+    border-color:#2898ec;
+    margin: 5px;
+    width: 150px;
+  }
+  .button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 5px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button-red {
+    background-color: red;
+  }
+  
+  .button-red:hover {
+    background-color: darkred;
+  }
+  
+  .button-amber {
+    background-color: orange;
+  }
+  
+  .button-amber:hover {
+    background-color: darkorange;
+  }
+  
+  .button-green {
+    background-color: green;
+  }
+  
+  .button-green:hover {
+    background-color: darkgreen;
+  }
+  @media (max-width: 600px) {
+  
+    .button {
+      padding: 8px; /* Reduced padding for smaller screens */
+      font-size: 10px; /* Smaller font size */
+      margin: 3px; /* Reduced margin to fit more buttons */
+      white-space: normal; /* Allow text to wrap */
+    overflow: visible;
+    }
+    .flashcard-container {
+      padding: 10px; /* Reduced padding for smaller screens */
+      margin: 2px; /* Reduced margin */
+      width: 240px;
+    }
+  
+    .flashcard-button {
+      padding: 6px; /* Reduced padding for smaller screens */
+      width: 100px; /* Adjust width to fit smaller screens */
+      font-size: 14px; /* Smaller font size */
+    }
+  
+    
+  }
